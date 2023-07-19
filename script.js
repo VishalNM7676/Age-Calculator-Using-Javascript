@@ -1,17 +1,17 @@
  // selecting the elements
- var date = document.getElementById('date');
- var calculate = document.getElementById('calculate');
- var result = document.querySelector('.result');
+ const date = document.getElementById('date');
+ const calculate = document.getElementById('calculate');
+ const result = document.querySelector('.result');
 
  // set maximum date to today
  date.max = new Date().toISOString().split('T')[0];
 
  function calculateAge() {
-   var today = new Date();
-   var birthDate = new Date(date.value);
+   let today = new Date();
+   let birthDate = new Date(date.value);
 
    // Calculate years
-   var years;
+   let years;
    if (today.getMonth() > birthDate.getMonth() || (today.getMonth() == birthDate.getMonth() && today.getDate() >= birthDate.getDate())) {
      years = today.getFullYear() - birthDate.getFullYear();
    }
@@ -20,7 +20,7 @@
    }
 
    // Calculate months
-   var months;
+   let months;
    if (today.getDate() >= birthDate.getDate()) {
      months = today.getMonth() - birthDate.getMonth();
    }
@@ -31,9 +31,9 @@
    months = months < 0 ? months + 12 : months;
 
    // Calculate days
-   var days;
+   let days;
    // days of months in a year
-   var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+   let monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
    if (today.getDate() >= birthDate.getDate()) {
      days = today.getDate() - birthDate.getDate();
    } else {
